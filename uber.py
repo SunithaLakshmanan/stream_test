@@ -11,7 +11,7 @@ DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
 
 def load_data(nrows):
     data=pd.read.csv(DATA_URL, nrows=nrows)
-    lowercase=lamda x:str(x).lower()
+    lowercase=lambda x:str(x).lower()
     data.rename(lowercase, axis="columns", inplace=True)
     data[DATA_COLUMN]=pd.to_datetime(data[Date_COLUMN])
     return data
